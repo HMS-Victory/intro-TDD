@@ -1,0 +1,50 @@
+in this project I use a virtual environment which simplifies the using of modules in this project because I can install things like 'pytest' and it will only exist in this environment and will be deleted when it is. In addition I do not have to type a long path to specify the location I am running these at.
+
+# installation
+py -m pip install --user virtualenv
+# specify the folder to build in
+py -m virtualenv env
+# check to make sure it exists
+where python  
+# activate the env
+...\env\Scripts\python.exe
+
+#### after completeing these steps one can run pytest as simply as typing it out
+
+
+# the method in TDD is to first create a failing unit test, then write just enough code
+# for that test to pass, and then refactor to prevent repeating code.
+# Each function in TDD follows a simple form.
+# for example:
+def checkout():
+    checkout=Checkout()
+    checkout.addItemPrice("a", 1)
+    checkout.addItemPrice("b", 2)
+    return checkout
+
+def test_CanCalculateTotal(checkout):
+    checkout.addItem("a")
+    assert checkout.calculateTotal() == 1
+
+# we have a simple utility function that calls a function inside the class 'checkout'
+# that function and return the resulting values.
+# As you can see the utility function is run inside the 'test_CanCalculateTotal' function
+# beneath where we collect the returned value we check to see if it matches the expected output
+# value that would be returned if the function in the class works properly.
+
+
+## Best Practices
+# doing the next simplest test case allows you to graduallly increase the complexity of your code.
+# use descriptive test names
+# unit tests are excelent documentation for how your code works
+# TDD needs to execute quickly the advantage to TDD is largly in the speed of feedback on whether your code is working.
+
+
+
+
+
+
+
+What is TDD?
+TDD is actually very simple you create functions which check to see if another function is returning an expected value, coming from prepared testing data.
+Other than that simple idea the main complexity of this type of code is in not repeating yourself by refactoring your code.
